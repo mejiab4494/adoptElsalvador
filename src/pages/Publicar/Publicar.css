@@ -1,0 +1,196 @@
+/* Publicar.css */
+
+.publicar {
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+
+/* Constrained column that holds header + form */
+.publicar-content {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* User bar — sits just above the form, right-aligned within the 800px column */
+.publicar-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.publicar-welcome {
+  font-size: 0.82rem;
+  color: #888;
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.publicar-logout {
+  padding: 0.3rem 0.9rem;
+  background: transparent;
+  border: 1.5px solid #ddd;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  color: #555;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.publicar-logout:hover {
+  border-color: #e03e3e;
+  color: #e03e3e;
+  background: #fff5f5;
+}
+
+/* Wrapper that strips the overlay/popup styles from AddAnimal
+   and renders it as a normal inline block */
+.publicar-form-wrapper .overlay {
+  position: static !important;
+  background: none !important;
+  padding: 0 !important;
+}
+
+.publicar-form-wrapper .popup {
+  position: static !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  max-height: none !important;
+  overflow: visible !important;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(107, 63, 42, 0.1);
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* Hide the close button since there's nothing to close */
+.publicar-form-wrapper .close-btn {
+  display: none;
+}
+
+/* Auth gate (not logged in) */
+.publicar-gate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  min-height: 60vh;
+  text-align: center;
+}
+
+.publicar-gate h2 {
+  font-size: 1.8rem;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.publicar-gate p {
+  color: #666;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.publicar-login-btn {
+  padding: 0.75rem 2rem;
+  background: #4f7dff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.publicar-login-btn:hover { background: #3a66e0; }
+
+.publicar-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.publicar-tab {
+  padding: 0.5rem 1.5rem;
+  border: 1.5px solid #ddd;
+  border-radius: 999px;
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #555;
+  transition: all 0.2s;
+}
+
+.publicar-tab.active {
+  background: #4f7dff;
+  border-color: #4f7dff;
+  color: #fff;
+  font-weight: 600;
+}
+
+.publicar-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.publicar-animal-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.publicar-animal-img {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #f5f5f5;
+}
+
+.publicar-animal-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex: 1;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.publicar-animal-info strong {
+  font-size: 1rem;
+  color: #1a1a1a;
+}
+
+.publicar-delete-btn {
+  padding: 0.35rem 0.9rem;
+  background: transparent;
+  border: 1.5px solid #e03e3e;
+  border-radius: 999px;
+  color: #e03e3e;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.publicar-delete-btn:hover {
+  background: #fff5f5;
+}
+
+.publicar-empty {
+  text-align: center;
+  color: #aaa;
+  font-size: 0.9rem;
+  padding: 1rem 0;
+}

@@ -1,0 +1,56 @@
+/* Hero.css */
+.hero {
+    background-image: url("/heroBackground.png");
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    height: calc(100vh - 106px);
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to left, rgba(0,0,0,0.45), transparent);
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    right: 200px;
+    transform: translateY(-50%);
+    max-width: 480px;
+    color: white;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 28px;
+    opacity: 0.92;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #cebfaf;
+    color: #333;
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #b8a898;
+    transform: translateY(-2px);
+}
