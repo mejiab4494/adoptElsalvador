@@ -19,6 +19,7 @@ export default function App() {
     const newEntry = {
       ...formData,
       id: Date.now(),
+      createdAt: new Date().toISOString(),
       picture: formData.photo ? URL.createObjectURL(formData.photo) : "default.png",
     };
     if (target === "lost") {
@@ -40,7 +41,7 @@ export default function App() {
     <>
       <Header />
       <Routes>
-        <Route path="/"         element={<Home recienLlegados={recienLlegados} />} />
+        <Route path="/" element={<Home recienLlegados={recienLlegados} lostPets={lostPets} />} />
         <Route path="/Perdidos" element={<Perdidos pets={lostPets} />} />
         <Route path="/adopta"   element={<Adopta pets={recienLlegados} />} />
         <Route path="/Publicar" element={

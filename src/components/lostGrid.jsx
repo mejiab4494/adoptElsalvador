@@ -11,6 +11,7 @@ export default function LostGrid( { pets }) {
             <div className="pet-meta">
               <span>{pet.age}</span>
               <span>{pet.breed}</span>
+              <span>{new Date(pet.createdAt).toLocaleString("es-ES")}</span>
             </div>
             <p>{pet.description}</p>
           </div>
