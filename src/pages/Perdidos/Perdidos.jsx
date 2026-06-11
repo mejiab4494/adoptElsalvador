@@ -1,6 +1,5 @@
 import { useState } from "react";
 import LostGrid from "../../components/lostGrid.jsx";
-import lostPets from "../../components/lost.js";
 import "./Perdidos.css";
 
 export default function Lost({ pets }) {

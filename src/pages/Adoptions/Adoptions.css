@@ -64,6 +64,13 @@
     letter-spacing: 0.3px;
 }
 
+span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
 .pet-card-body p {
     font-size: 0.9rem;
     color: #6b4f3a;

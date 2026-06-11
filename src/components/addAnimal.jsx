@@ -92,7 +92,7 @@ export default function AddAnimal({ target, onClose, onSubmit, inline }) {
           <div className="row">
             <div className="field">
               <label>Ciudad</label>
-              <input name="city" value={form.city} onChange={handleChange} placeholder="ej. Madrid" />
+              <input name="city" value={form.city} onChange={handleChange} placeholder="ej. San Salvador" />
             </div>
             <div className="field">
               <label>{target === "lost" ? "Fecha en que se perdió" : "Disponible desde"}</label>
@@ -126,7 +126,7 @@ export default function AddAnimal({ target, onClose, onSubmit, inline }) {
             </div>
             <div className="field">
               <label>Teléfono</label>
-              <input type="tel" name="phone" value={form.phone} onChange={handleChange} placeholder="+34 600 000 000" />
+              <input type="tel" name="phone" value={form.phone} onChange={handleChange} placeholder="+503 600 000 000" />
             </div>
           </div>
           <div className="field">

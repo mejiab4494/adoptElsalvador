@@ -1,4 +1,4 @@
-import recienLlegado from "./recienLlegado.js";
+
 
 export default function LostGrid( { pets }) {
   return (

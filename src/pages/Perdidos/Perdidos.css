@@ -4,7 +4,7 @@
   --cream: #fdf6ee;
   --warm-brown: #6b3f2a;
   --accent: #e07b39;
-  --soft-gray: #9e9e9e;
+  --soft-gray: #5c4a3a;
   --card-bg: #fff8f2;
   --shadow: 0 4px 20px rgba(107, 63, 42, 0.1);
 }
@@ -34,8 +34,7 @@
 }
 
 .perdidos__text {
-  font-size: 1rem;
-  color: var(--soft-gray);
+  font-size: 1.2rem;
   line-height: 1.8;
   font-weight: 300;
 }
@@ -108,9 +107,14 @@
   text-transform: uppercase;
 }
 
+span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .pet-card-body p {
-  font-size: 0.9rem;
-  color: var(--soft-gray);
+  font-size: 1.1rem;
   line-height: 1.6;
   margin: 0;
 }

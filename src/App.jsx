@@ -1,56 +1,34 @@
-import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
+import { usePets } from "./hooks/usePets.js";
+
 import Header from "./pages/Header/Header";
 import Home from "./pages/Home";
 import Perdidos from "./pages/Perdidos/Perdidos";
 import Adopta from "./pages/Adopta/Adopta";
 import Publicar from "./pages/Publicar/Publicar";
-
-import lostPetsData from "./components/lost.js";
-import recienLlegadoData from "./components/recienLlegado.js";
-
 import './App.css';
 
 export default function App() {
-  const [lostPets, setLostPets]             = useState(lostPetsData);
-  const [recienLlegados, setRecienLlegados] = useState(recienLlegadoData);
+  const { lostPets, recienLlegados, loading, isAdmin, handleAddAnimal, handleDelete } = usePets();
 
-  function handleAddAnimal(target, formData) {
-    const newEntry = {
-      ...formData,
-      id: Date.now(),
-      createdAt: new Date().toISOString(),
-      picture: formData.photo ? URL.createObjectURL(formData.photo) : "default.png",
-    };
-    if (target === "lost") {
-      setLostPets((prev) => [...prev, newEntry]);
-    } else {
-      setRecienLlegados((prev) => [...prev, newEntry]);
-    }
-  }
-
-  function handleDeleteAnimal(target, id) {
-    if (target === "lost") {
-      setLostPets((prev) => prev.filter((pet) => pet.id !== id));
-    } else {
-      setRecienLlegados((prev) => prev.filter((pet) => pet.id !== id));
-    }
-  }
+  if (loading) return <div className="loading">Cargando...</div>;
 
   return (
     <>
       <Header />
       <Routes>
-        <Route path="/" element={<Home recienLlegados={recienLlegados} lostPets={lostPets} />} />
+        <Route path="/"         element={<Home recienLlegados={recienLlegados} lostPets={lostPets} />} />
         <Route path="/Perdidos" element={<Perdidos pets={lostPets} />} />
         <Route path="/adopta"   element={<Adopta pets={recienLlegados} />} />
         <Route path="/Publicar" element={
-          <Publicar 
+          <Publicar
             onSubmit={handleAddAnimal}
-            onDelete={handleDeleteAnimal}
+            onDelete={handleDelete}
             lostPets={lostPets}
             recienLlegados={recienLlegados}
-        /> } />
+            isAdmin={isAdmin}
+          />}
+        />
       </Routes>
     </>
   );

@@ -1,17 +1,18 @@
 import Hero from "./Hero/Hero";
-import recienLlegado from "../components/recienLlegado.js";
-import lostPets from "../components/lost";
 import Adoptions from "./Adoptions/Adoptions";
 
-export default function Home() {
-  const combinedPets = [...recienLlegado, ...lostPets]
-  .sort((a,b) => new Date(b.createdAt) - new Date(a.createdAt))
-  .slice(0, 10);
+export default function Home({ recienLlegados, lostPets }) {
+  const combined = [
+    ...recienLlegados.map(p => ({ ...p, _key: `adoption-${p.id}` })),
+    ...lostPets.map(p => ({ ...p, _key: `lost-${p.id}` })),
+  ]
+    .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+    .slice(0, 10);
 
   return (
     <div>
       <Hero />
-      <Adoptions pets={combinedPets} />
+      <Adoptions pets={combined} />
     </div>
   );
 }

@@ -6,7 +6,7 @@ import AddAnimal from "../../components/addAnimal.jsx";
 import LoginModal from "../../components/LoginModal.jsx";
 import "./Publicar.css";
 
-export default function Publicar({ onSubmit, onDelete, lostPets, recienLlegados }) {
+export default function Publicar({ onSubmit, onDelete, lostPets, recienLlegados, isAdmin }) {
   const [user, setUser] = useState(null);
   const [authReady, setAuthReady] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -32,10 +32,12 @@ export default function Publicar({ onSubmit, onDelete, lostPets, recienLlegados 
 
   if (!authReady) return null;
 
-  const currentList = activeTab === "lost" ? lostPets : recienLlegados;
+  const currentList = (activeTab === "lost" ? lostPets : recienLlegados)
+  .filter((pet) => pet.userId === user?.uid);
   const currentTarget = activeTab === "lost" ? "lost" : "adoption";
 
   return (
+
     <div className="publicar">
       {user ? (
         <div className="publicar-content">
