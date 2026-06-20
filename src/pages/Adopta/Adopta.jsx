@@ -1,5 +1,5 @@
 import { useState } from "react";
-import LostGrid from "../../components/lostGrid.jsx";
+import Card from "../../components/Card.jsx";
 import "./Adopta.css";
 
 export default function Adopta({ pets }) {
@@ -14,7 +14,7 @@ export default function Adopta({ pets }) {
                     Si estás interesado en adoptar a alguno de ellos, por favor contáctanos.
                 </p>
             </div>
-            <LostGrid pets={pets} />
+            <Card pets={pets} />
         </div>
     );
 }

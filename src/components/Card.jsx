@@ -1,4 +1,4 @@
-
+import "./Card.css";
 
 export default function LostGrid( { pets }) {
   return (
@@ -8,6 +8,9 @@ export default function LostGrid( { pets }) {
           <img src={pet.picture} alt={pet.name} />
           <div className="pet-card-body">
             <h2>{pet.name}</h2>
+            <span className={`pet-badge ${pet.type === "lost" ? "badge-lost" : "badge-adoption"}`}>
+                {pet.type === "lost" ? "🔍 Perdido" : "🏠 En adopción"}
+            </span>
             <div className="pet-meta">
               <span>{pet.age}</span>
               <span>{pet.breed}</span>

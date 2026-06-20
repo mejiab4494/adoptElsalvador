@@ -54,3 +54,66 @@
     background-color: #b8a898;
     transform: translateY(-2px);
 }
+
+/* Tablet styles */
+@media (max-width: 768px) {
+    .hero {
+        height: calc(80vh - 106px);
+    }
+
+    .hero-content {
+        right: 60px;
+        max-width: 400px;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+        margin-bottom: 22px;
+    }
+
+    .btn {
+        padding: 10px 24px;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 480px) {
+    .hero {
+        background-image: url("/adotpImg.png");
+        height: calc(70vh - 106px);
+    }
+
+    .hero::before {
+        background: linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0.15));
+    }
+
+    .hero-content {
+        right: auto;
+        left: 50%;
+        top: auto;
+        bottom: 30px;
+        transform: translateX(-50%);
+        text-align: center;
+        max-width: 90%;
+        width: 320px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.6rem;
+        margin-bottom: 10px;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
+        margin-bottom: 18px;
+    }
+
+    .btn {
+        padding: 10px 22px;
+        font-size: 0.9rem;
+    }
+}

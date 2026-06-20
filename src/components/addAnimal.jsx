@@ -18,7 +18,7 @@ export default function AddAnimal({ target, onClose, onSubmit, inline }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit(target, form);
+    onSubmit(target, {... form, type: target});
     onClose();
   };
 

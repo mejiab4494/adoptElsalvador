@@ -1,5 +1,5 @@
 import { useState } from "react";
-import LostGrid from "../../components/lostGrid.jsx";
+import Card from "../../components/Card.jsx";
 import "./Perdidos.css";
 
 export default function Lost({ pets }) {
@@ -15,7 +15,7 @@ export default function Lost({ pets }) {
           ayudarte a encontrarla.
         </p>
       </div>
-      <LostGrid pets={pets} />
+      <Card pets={pets} />
     </div>
   );
 }

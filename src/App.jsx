@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Perdidos from "./pages/Perdidos/Perdidos";
 import Adopta from "./pages/Adopta/Adopta";
 import Publicar from "./pages/Publicar/Publicar";
+import Fundaciones from "./pages/Fundaciones/Fundaciones";
 import './App.css';
 
 export default function App() {
@@ -20,6 +21,7 @@ export default function App() {
         <Route path="/"         element={<Home recienLlegados={recienLlegados} lostPets={lostPets} />} />
         <Route path="/Perdidos" element={<Perdidos pets={lostPets} />} />
         <Route path="/adopta"   element={<Adopta pets={recienLlegados} />} />
+        <Route path="/Fundaciones" element={<Fundaciones />} />
         <Route path="/Publicar" element={
           <Publicar
             onSubmit={handleAddAnimal}
