@@ -93,6 +93,7 @@ export function usePets() {
       picture:     pictureUrl,
       userId:      auth.currentUser.uid,
       createdAt:   new Date().toISOString(),
+      type:        target,
     });
   }
 

@@ -1,6 +1,6 @@
 .pet-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 28px;
   width: 100%;
   max-width: 1100px;
@@ -12,6 +12,8 @@
   overflow: hidden;
   box-shadow: var(--shadow);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .pet-card:hover {
@@ -27,6 +29,9 @@
 
 .pet-card-body {
   padding: 18px 20px 22px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .pet-card-body h2 {
@@ -34,42 +39,14 @@
   font-size: 1.3rem;
   color: var(--warm-brown);
   margin: 0 0 8px;
-}
-
-.pet-meta {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-
-.pet-meta span {
-  background: var(--accent);
-  color: #fff;
-  font-size: 0.75rem;
-  font-weight: 600;
-  padding: 3px 10px;
-  border-radius: 20px;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-}
-
-span {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-
-.pet-card-body p {
-    font-size: 0.9rem;
-    color: #6b4f3a;
-    line-height: 1.6;
+  text-align: center;
 }
 
 .pet-badge {
+  align-self: center;
   display: inline-block;
-  padding: 4px 10px;
-  margin: 7px 0px 7px 0px;
+  padding: 4px 12px;
+  margin: 0 0 12px;
   border-radius: 20px;
   font-size: 0.75rem;
   font-weight: 600;
@@ -84,4 +61,61 @@ span {
 .badge-adoption {
   background-color: #d4edda;
   color: #1a5c2a;
+}
+
+.pet-meta {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px 10px;
+  margin-bottom: 12px;
+}
+
+.pet-meta span {
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 8px;
+  letter-spacing: 0.3px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pet-card-body p {
+  font-size: 0.9rem;
+  color: #6b4f3a;
+  line-height: 1.6;
+  margin: 0 0 14px;
+  flex: 1;
+}
+
+.pet-contact {
+  border-top: 1px solid var(--accent);
+  padding-top: 12px;
+  margin-top: auto;
+}
+
+.pet-contact h3 {
+  font-size: 0.85rem;
+  color: var(--warm-brown);
+  margin: 0 0 6px;
+}
+
+.pet-contact span {
+  display: block;
+  font-size: 0.85rem;
+  color: #6b4f3a;
+  line-height: 1.5;
+}
+
+.pet-contact a {
+  color: var(--warm-brown);
+  text-decoration: none;
+}
+
+.pet-contact a:hover {
+  text-decoration: underline;
 }

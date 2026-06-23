@@ -13,10 +13,9 @@ export default function Publicar({ onSubmit, onDelete, lostPets, recienLlegados,
   const [submitted, setSubmitted] = useState(false);
   const [activeTab, setActiveTab] = useState("adoption"); // "adoption" | "lost"
 
-  const handleSubmit = (target, form) => {
-    onSubmit(target, form);
+  const handleSubmit = async (target, form) => {
+    await onSubmit(target, form);
     setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
   };
 
   useEffect(() => {
@@ -33,11 +32,10 @@ export default function Publicar({ onSubmit, onDelete, lostPets, recienLlegados,
   if (!authReady) return null;
 
   const currentList = (activeTab === "lost" ? lostPets : recienLlegados)
-  .filter((pet) => pet.userId === user?.uid);
+    .filter((pet) => pet.userId === user?.uid);
   const currentTarget = activeTab === "lost" ? "lost" : "adoption";
 
   return (
-
     <div className="publicar">
       {user ? (
         <div className="publicar-content">
@@ -47,10 +45,6 @@ export default function Publicar({ onSubmit, onDelete, lostPets, recienLlegados,
               Cerrar sesión
             </button>
           </div>
-
-          {submitted && (
-            <p className="publicar-success">¡Animal publicado con éxito!</p>
-          )}
 
           {/* Tab switcher */}
           <div className="publicar-tabs">
@@ -117,6 +111,19 @@ export default function Publicar({ onSubmit, onDelete, lostPets, recienLlegados,
       )}
 
       {showModal && <LoginModal onClose={() => setShowModal(false)} />}
+
+      {submitted && (
+        <div className="success-overlay" onClick={() => setSubmitted(false)}>
+          <div className="success-popup" onClick={(e) => e.stopPropagation()}>
+            <div className="success-icon">✓</div>
+            <h3>¡Animal publicado con éxito!</h3>
+            <p>Tu reporte ya está visible en la plataforma.</p>
+            <button className="success-close-btn" onClick={() => setSubmitted(false)}>
+              Aceptar
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
