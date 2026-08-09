@@ -1,6 +1,6 @@
 import Hero from "./Hero/Hero";
 import Adoptions from "./Adoptions/Adoptions";
-import Footer from "./Footer/Footer";
+
 
 export default function Home({ recienLlegados, lostPets }) {
   const combined = [
@@ -14,7 +14,6 @@ export default function Home({ recienLlegados, lostPets }) {
     <div>
       <Hero />
       <Adoptions pets={combined} />
-      <Footer />
     </div>
   );
 }

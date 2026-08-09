@@ -7,6 +7,7 @@ import Perdidos from "./pages/Perdidos/Perdidos";
 import Adopta from "./pages/Adopta/Adopta";
 import Publicar from "./pages/Publicar/Publicar";
 import Fundaciones from "./pages/Fundaciones/Fundaciones";
+import Footer from "./pages/Footer/Footer.jsx";
 import './App.css';
 
 export default function App() {
@@ -17,21 +18,24 @@ export default function App() {
   return (
     <>
       <Header />
-      <Routes>
-        <Route path="/"         element={<Home recienLlegados={recienLlegados} lostPets={lostPets} />} />
-        <Route path="/Perdidos" element={<Perdidos pets={lostPets} />} />
-        <Route path="/adopta"   element={<Adopta pets={recienLlegados} />} />
-        <Route path="/Fundaciones" element={<Fundaciones />} />
-        <Route path="/Publicar" element={
-          <Publicar
-            onSubmit={handleAddAnimal}
-            onDelete={handleDelete}
-            lostPets={lostPets}
-            recienLlegados={recienLlegados}
-            isAdmin={isAdmin}
-          />}
-        />
-      </Routes>
+      <main>
+        <Routes>
+          <Route path="/"         element={<Home recienLlegados={recienLlegados} lostPets={lostPets} />} />
+          <Route path="/Perdidos" element={<Perdidos pets={lostPets} />} />
+          <Route path="/adopta"   element={<Adopta pets={recienLlegados} />} />
+          <Route path="/Fundaciones" element={<Fundaciones />} />
+          <Route path="/Publicar" element={
+            <Publicar
+              onSubmit={handleAddAnimal}
+              onDelete={handleDelete}
+              lostPets={lostPets}
+              recienLlegados={recienLlegados}
+              isAdmin={isAdmin}
+            />}
+          />
+        </Routes>
+      </main>
+      <Footer></Footer>
     </>
   );
 }

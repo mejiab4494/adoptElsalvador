@@ -7,8 +7,11 @@ export default function Fundaciones() {
             <div className="fundaciones-intro">
                 <h1>Fundaciones</h1>
                 <p className="fundaciones-subtitle">Fundaciones privadas</p>
+                <p> ¿Tiene una fundación de rescate? Ayúdenos a agregarla —{" "}
+                <a href="https://mejiab.dev/contact.html">contáctenos</a>.
+                </p>
             </div>
-            <div className="fundaciones-grid">
+            {/* <div className="fundaciones-grid">
                 {FOUNDATIONS.map((fundacion) => (
                     <div key={fundacion.id} className="fundacion-card">
                         <img src={fundacion.picture} alt={fundacion.name} />
@@ -22,7 +25,7 @@ export default function Fundaciones() {
                         </div>
                     </div>
                 ))}
-            </div>
+            </div> */}
         </div>
     )
 }
